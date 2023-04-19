@@ -1,0 +1,267 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/fyi/.gradle/caches/transforms-3/6d99281368885f3c3ed3e3a67d7a314c/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/fyi/.gradle/caches/transforms-3/ef2105ba0f9d5e1736bf34c76e2fbada/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/fyi/.gradle/caches/transforms-3/be73948a6557dcdc6c333f6452edc360/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] /Users/fyi/.gradle/caches/transforms-3/1ececaaeef5b146ccff2681bc2c81a34/transformed/jetified-activity-1.6.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/fyi/.gradle/caches/transforms-3/82ed37f1df2b145c685fdad51d62a3f3/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/fyi/.gradle/caches/transforms-3/907e45818cc6d14ab72dfb159fa0b0a6/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/fyi/.gradle/caches/transforms-3/795662b53b11188ab6698bbdda1a321c/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/fyi/.gradle/caches/transforms-3/fcf2bcf65ff9a3643ae24cc59e715df4/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/fyi/.gradle/caches/transforms-3/35c87f51b547695016ca67e8f0f96ac5/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1bbf4675518cec03aafdaf1e96340d42/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/fyi/.gradle/caches/transforms-3/55ffa00f59c07f50cc8be41745935247/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/fyi/.gradle/caches/transforms-3/5627eb846d9dcd7f7c4ddc82e4345c23/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/fyi/.gradle/caches/transforms-3/d3d5ec0a57ac4bb50810499539c9dac2/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/fyi/.gradle/caches/transforms-3/508998966445f37b75f0e6194bef6baa/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/fyi/.gradle/caches/transforms-3/2aed3317db1d0305706703629148851c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/fyi/.gradle/caches/transforms-3/fb85183642907eff397cae52f7d502dd/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/fyi/.gradle/caches/transforms-3/85c9b1eafe27689a8eaecf59cbecdced/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/fyi/.gradle/caches/transforms-3/01109a31d59d1ef715a0ac57bab61d63/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/fyi/.gradle/caches/transforms-3/4f42a4a7d1d5c18b3ee682c469409946/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/fyi/.gradle/caches/transforms-3/3e6a356dc31dc206fc4df9128eb04cbf/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/fyi/.gradle/caches/transforms-3/61b0ea4dcc8eb61074733a5eb88dc7e0/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/fyi/.gradle/caches/transforms-3/22244c14da60f03cfcbea536d714c222/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/fyi/.gradle/caches/transforms-3/c0d0629136d6488e5b6b93e73d9392a2/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/fyi/.gradle/caches/transforms-3/819042311a143bae318cd2087d453259/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:70-107
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:163-188
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:139-162
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+	android:installLocation
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:2:108-138
+uses-permission#android.permission.INTERNET
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:3:5-66
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:3:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:4:5-80
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:4:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.WRITE_CONTACTS
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:6:5-72
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:6:22-70
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:7:22-69
+supports-screens
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:9:5-135
+	android:largeScreens
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:9:49-76
+	android:smallScreens
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:9:106-133
+	android:normalScreens
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:9:77-105
+	android:anyDensity
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:9:23-48
+application
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:5-20:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/fyi/.gradle/caches/transforms-3/01109a31d59d1ef715a0ac57bab61d63/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/fyi/.gradle/caches/transforms-3/01109a31d59d1ef715a0ac57bab61d63/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:requestLegacyExternalStorage
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:88-131
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+	android:label
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:53-87
+	android:hardwareAccelerated
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:18-52
+	android:allowBackup
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:178-204
+	android:allowNativeHeapPointerTagging
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:132-177
+	android:fullBackupOnly
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:10:205-235
+activity#com.example.contactsdisplay.MainActivity
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:9-19:20
+	android:screenOrientation
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:284-323
+	android:label
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:218-252
+	android:launchMode
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:253-283
+	android:exported
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:324-347
+	android:configChanges
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:48-217
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:11:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:12:13-15:29
+action#android.intent.action.MAIN
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:13:17-68
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:13:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:14:17-76
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:14:27-74
+meta-data#android.app.lib_name
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:16:13-96
+	android:value
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:16:60-94
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:16:24-59
+meta-data#android.app.arguments
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:17:13-79
+	android:value
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:17:61-77
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:17:24-60
+meta-data#android.app.extract_android_style
+ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:18:13-98
+	android:value
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:18:73-96
+	android:name
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml:18:24-72
+uses-sdk
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/fyi/.gradle/caches/transforms-3/6d99281368885f3c3ed3e3a67d7a314c/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/fyi/.gradle/caches/transforms-3/6d99281368885f3c3ed3e3a67d7a314c/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/fyi/.gradle/caches/transforms-3/ef2105ba0f9d5e1736bf34c76e2fbada/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/fyi/.gradle/caches/transforms-3/ef2105ba0f9d5e1736bf34c76e2fbada/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/fyi/.gradle/caches/transforms-3/be73948a6557dcdc6c333f6452edc360/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/fyi/.gradle/caches/transforms-3/be73948a6557dcdc6c333f6452edc360/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] /Users/fyi/.gradle/caches/transforms-3/1ececaaeef5b146ccff2681bc2c81a34/transformed/jetified-activity-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] /Users/fyi/.gradle/caches/transforms-3/1ececaaeef5b146ccff2681bc2c81a34/transformed/jetified-activity-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/fyi/.gradle/caches/transforms-3/82ed37f1df2b145c685fdad51d62a3f3/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/fyi/.gradle/caches/transforms-3/82ed37f1df2b145c685fdad51d62a3f3/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/fyi/.gradle/caches/transforms-3/907e45818cc6d14ab72dfb159fa0b0a6/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/fyi/.gradle/caches/transforms-3/907e45818cc6d14ab72dfb159fa0b0a6/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/fyi/.gradle/caches/transforms-3/795662b53b11188ab6698bbdda1a321c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/fyi/.gradle/caches/transforms-3/795662b53b11188ab6698bbdda1a321c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/fyi/.gradle/caches/transforms-3/fcf2bcf65ff9a3643ae24cc59e715df4/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/fyi/.gradle/caches/transforms-3/fcf2bcf65ff9a3643ae24cc59e715df4/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/fyi/.gradle/caches/transforms-3/35c87f51b547695016ca67e8f0f96ac5/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/fyi/.gradle/caches/transforms-3/35c87f51b547695016ca67e8f0f96ac5/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1bbf4675518cec03aafdaf1e96340d42/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1bbf4675518cec03aafdaf1e96340d42/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/fyi/.gradle/caches/transforms-3/55ffa00f59c07f50cc8be41745935247/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/fyi/.gradle/caches/transforms-3/55ffa00f59c07f50cc8be41745935247/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/fyi/.gradle/caches/transforms-3/5627eb846d9dcd7f7c4ddc82e4345c23/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/fyi/.gradle/caches/transforms-3/5627eb846d9dcd7f7c4ddc82e4345c23/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/fyi/.gradle/caches/transforms-3/d3d5ec0a57ac4bb50810499539c9dac2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/fyi/.gradle/caches/transforms-3/d3d5ec0a57ac4bb50810499539c9dac2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/fyi/.gradle/caches/transforms-3/508998966445f37b75f0e6194bef6baa/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/fyi/.gradle/caches/transforms-3/508998966445f37b75f0e6194bef6baa/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/fyi/.gradle/caches/transforms-3/2aed3317db1d0305706703629148851c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/fyi/.gradle/caches/transforms-3/2aed3317db1d0305706703629148851c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/fyi/.gradle/caches/transforms-3/fb85183642907eff397cae52f7d502dd/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/fyi/.gradle/caches/transforms-3/fb85183642907eff397cae52f7d502dd/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/fyi/.gradle/caches/transforms-3/85c9b1eafe27689a8eaecf59cbecdced/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/fyi/.gradle/caches/transforms-3/85c9b1eafe27689a8eaecf59cbecdced/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/fyi/.gradle/caches/transforms-3/01109a31d59d1ef715a0ac57bab61d63/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/fyi/.gradle/caches/transforms-3/01109a31d59d1ef715a0ac57bab61d63/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/fyi/.gradle/caches/transforms-3/4f42a4a7d1d5c18b3ee682c469409946/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/fyi/.gradle/caches/transforms-3/4f42a4a7d1d5c18b3ee682c469409946/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/fyi/.gradle/caches/transforms-3/3e6a356dc31dc206fc4df9128eb04cbf/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/fyi/.gradle/caches/transforms-3/3e6a356dc31dc206fc4df9128eb04cbf/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/fyi/.gradle/caches/transforms-3/61b0ea4dcc8eb61074733a5eb88dc7e0/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/fyi/.gradle/caches/transforms-3/61b0ea4dcc8eb61074733a5eb88dc7e0/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/fyi/.gradle/caches/transforms-3/22244c14da60f03cfcbea536d714c222/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/fyi/.gradle/caches/transforms-3/22244c14da60f03cfcbea536d714c222/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/fyi/.gradle/caches/transforms-3/c0d0629136d6488e5b6b93e73d9392a2/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/fyi/.gradle/caches/transforms-3/c0d0629136d6488e5b6b93e73d9392a2/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/fyi/.gradle/caches/transforms-3/819042311a143bae318cd2087d453259/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/fyi/.gradle/caches/transforms-3/819042311a143bae318cd2087d453259/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		ADDED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+		INJECTED from /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/fyi/.gradle/caches/transforms-3/9bd80c9774302c4cd1a9c217c536e9df/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/fyi/.gradle/caches/transforms-3/715a60e1237382fe5025d1e168ec01bf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+permission#com.example.contactsdisplay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.contactsdisplay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/fyi/.gradle/caches/transforms-3/1770ee9305e7755f14bd93518150441e/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/fyi/.gradle/caches/transforms-3/7f2d1cc7a87746f88d87117f3b62a271/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78

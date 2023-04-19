@@ -1,0 +1,42 @@
+{
+    "classes": [
+        {
+            "className": "ContactsList",
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "contacts",
+                    "notify": "contactsChanged",
+                    "read": "getContacts",
+                    "required": false,
+                    "reset": "resetContacts()",
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "write": "setContacts"
+                }
+            ],
+            "qualifiedClassName": "ContactsList",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "contactsChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "contactslist.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/ContactsDisplay/">
+    <file alias="Main.qml">/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/Main.qml</file>
+  </qresource>
+</RCC>
+
