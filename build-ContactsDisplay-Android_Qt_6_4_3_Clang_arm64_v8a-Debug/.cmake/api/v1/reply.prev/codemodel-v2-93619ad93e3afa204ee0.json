@@ -1,0 +1,223 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-581928ecc55ff6eb0ab9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ContactsDisplay",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_qt_internal_apk_dependencies::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_qt_internal_apk_dependencies-Debug-b48bc613a6328d5d57c5.json",
+					"name" : "_qt_internal_apk_dependencies",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aab-Debug-b0a4c872f9b03fbfeb74.json",
+					"name" : "aab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-d91322adc59efb2f684b.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-1b804313d9f37e050dbb.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-851236610e31d8b2ff58.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apk-Debug-8c42d235fe99346f75f6.json",
+					"name" : "apk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apk_all::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apk_all-Debug-dd3e30dcde84d253eed2.json",
+					"name" : "apk_all",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay-Debug-5d3bf366862f75a175cc.json",
+					"name" : "appContactsDisplay",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_autogen-Debug-2bced7b4bd3ae72031b0.json",
+					"name" : "appContactsDisplay_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_autogen_timestamp_deps-Debug-d106dc8a5aca46be2e2e.json",
+					"name" : "appContactsDisplay_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_make_aab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_make_aab-Debug-828628fd94d861a38135.json",
+					"name" : "appContactsDisplay_make_aab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_make_apk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_make_apk-Debug-19076590466c0f20ba06.json",
+					"name" : "appContactsDisplay_make_apk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_other_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_other_files-Debug-0cd9fb92c6d876e2f75f.json",
+					"name" : "appContactsDisplay_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_prepare_apk_dir::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_prepare_apk_dir-Debug-d711fb04d19d1676d544.json",
+					"name" : "appContactsDisplay_prepare_apk_dir",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_qmllint-Debug-1554efb9b5fe9d14cfa6.json",
+					"name" : "appContactsDisplay_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_qmllint_json-Debug-0621a454dca57493f777.json",
+					"name" : "appContactsDisplay_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_qmltyperegistration-Debug-da39c8bed44513ebe125.json",
+					"name" : "appContactsDisplay_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appContactsDisplay_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appContactsDisplay_tooling-Debug-35cf4c5c83b18188e1e1.json",
+					"name" : "appContactsDisplay_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_internal_plugins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_internal_plugins-Debug-71b70d9df1c162aae585.json",
+					"name" : "qt_internal_plugins",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug",
+		"source" : "/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

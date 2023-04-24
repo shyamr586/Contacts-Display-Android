@@ -133,6 +133,7 @@
   /Users/fyi/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/xlocale.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QObject \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QProperty \
+  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QVector \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qalgorithms.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qanystringview.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qarraydata.h \
@@ -198,4 +199,5 @@
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qtmetamacros.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qtypeinfo.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qutf8stringview.h \
+  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qvector.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qversiontagging.h

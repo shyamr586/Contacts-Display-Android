@@ -11,8 +11,7 @@ qt_standard_project_setup()
 
 qt_add_executable(appContactsDisplay
     main.cpp
-    contactslist.h
-    contactslist.cpp
+    contactsmodel.h contactsmodel.cpp
 )
 
 if(ANDROID)

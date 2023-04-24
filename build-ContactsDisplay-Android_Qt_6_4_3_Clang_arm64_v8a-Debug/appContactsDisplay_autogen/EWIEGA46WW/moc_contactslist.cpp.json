@@ -27,6 +27,44 @@
                     "access": "public",
                     "name": "contactsChanged",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "preItemAppended",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "postItemAppended",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "preItemRemoved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "postItemRemoved",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "name": "appendItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "removeItem",
+                    "returnType": "void"
                 }
             ],
             "superClasses": [

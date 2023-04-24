@@ -761,9 +761,9 @@
 	"HEADERS" : 
 	[
 		[
-			"/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactslist.h",
+			"/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactsmodel.h",
 			"MU",
-			"EWIEGA46WW/moc_contactslist.cpp",
+			"EWIEGA46WW/moc_contactsmodel.cpp",
 			null
 		]
 	],
@@ -853,7 +853,7 @@
 	"SOURCES" : 
 	[
 		[
-			"/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactslist.cpp",
+			"/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactsmodel.cpp",
 			"MU",
 			null
 		],

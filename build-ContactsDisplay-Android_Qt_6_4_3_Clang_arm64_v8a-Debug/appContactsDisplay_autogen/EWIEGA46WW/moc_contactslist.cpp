@@ -26,11 +26,18 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_ContactsList_t {
-    uint offsetsAndSizes[8];
+    uint offsetsAndSizes[22];
     char stringdata0[13];
     char stringdata1[16];
     char stringdata2[1];
-    char stringdata3[9];
+    char stringdata3[16];
+    char stringdata4[17];
+    char stringdata5[15];
+    char stringdata6[6];
+    char stringdata7[16];
+    char stringdata8[11];
+    char stringdata9[11];
+    char stringdata10[9];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ContactsList_t::offsetsAndSizes) + ofs), len 
@@ -39,11 +46,25 @@ Q_CONSTINIT static const qt_meta_stringdata_ContactsList_t qt_meta_stringdata_Co
         QT_MOC_LITERAL(0, 12),  // "ContactsList"
         QT_MOC_LITERAL(13, 15),  // "contactsChanged"
         QT_MOC_LITERAL(29, 0),  // ""
-        QT_MOC_LITERAL(30, 8)   // "contacts"
+        QT_MOC_LITERAL(30, 15),  // "preItemAppended"
+        QT_MOC_LITERAL(46, 16),  // "postItemAppended"
+        QT_MOC_LITERAL(63, 14),  // "preItemRemoved"
+        QT_MOC_LITERAL(78, 5),  // "index"
+        QT_MOC_LITERAL(84, 15),  // "postItemRemoved"
+        QT_MOC_LITERAL(100, 10),  // "appendItem"
+        QT_MOC_LITERAL(111, 10),  // "removeItem"
+        QT_MOC_LITERAL(122, 8)   // "contacts"
     },
     "ContactsList",
     "contactsChanged",
     "",
+    "preItemAppended",
+    "postItemAppended",
+    "preItemRemoved",
+    "index",
+    "postItemRemoved",
+    "appendItem",
+    "removeItem",
     "contacts"
 };
 #undef QT_MOC_LITERAL
@@ -55,21 +76,37 @@ Q_CONSTINIT static const uint qt_meta_data_ContactsList[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
-       1,   21, // properties
+       7,   14, // methods
+       1,   65, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x06,    2 /* Public */,
+       1,    0,   56,    2, 0x06,    2 /* Public */,
+       3,    0,   57,    2, 0x06,    3 /* Public */,
+       4,    0,   58,    2, 0x06,    4 /* Public */,
+       5,    1,   59,    2, 0x06,    5 /* Public */,
+       7,    0,   62,    2, 0x06,    7 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       8,    0,   63,    2, 0x0a,    8 /* Public */,
+       9,    0,   64,    2, 0x0a,    9 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    6,
+    QMetaType::Void,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
 
  // properties: name, type, flags
-       3, QMetaType::QStringList, 0x00015107, uint(0), 0,
+      10, QMetaType::QStringList, 0x00015107, uint(0), 0,
 
        0        // eod
 };
@@ -86,6 +123,19 @@ Q_CONSTINIT const QMetaObject ContactsList::staticMetaObject = { {
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<ContactsList, std::true_type>,
         // method 'contactsChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'preItemAppended'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'postItemAppended'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'preItemRemoved'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'postItemRemoved'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'appendItem'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'removeItem'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -98,6 +148,12 @@ void ContactsList::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         (void)_t;
         switch (_id) {
         case 0: _t->contactsChanged(); break;
+        case 1: _t->preItemAppended(); break;
+        case 2: _t->postItemAppended(); break;
+        case 3: _t->preItemRemoved((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 4: _t->postItemRemoved(); break;
+        case 5: _t->appendItem(); break;
+        case 6: _t->removeItem(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -106,6 +162,34 @@ void ContactsList::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
             using _t = void (ContactsList::*)();
             if (_t _q_method = &ContactsList::contactsChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (ContactsList::*)();
+            if (_t _q_method = &ContactsList::preItemAppended; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (ContactsList::*)();
+            if (_t _q_method = &ContactsList::postItemAppended; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 2;
+                return;
+            }
+        }
+        {
+            using _t = void (ContactsList::*)(int );
+            if (_t _q_method = &ContactsList::preItemRemoved; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 3;
+                return;
+            }
+        }
+        {
+            using _t = void (ContactsList::*)();
+            if (_t _q_method = &ContactsList::postItemRemoved; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 4;
                 return;
             }
         }
@@ -134,7 +218,6 @@ void ContactsList::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         }
     } else if (_c == QMetaObject::BindableProperty) {
     }
-    (void)_a;
 }
 
 const QMetaObject *ContactsList::metaObject() const
@@ -156,13 +239,13 @@ int ContactsList::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 7;
     }else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
@@ -176,6 +259,31 @@ int ContactsList::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void ContactsList::contactsChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void ContactsList::preItemAppended()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void ContactsList::postItemAppended()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+}
+
+// SIGNAL 3
+void ContactsList::preItemRemoved(int _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void ContactsList::postItemRemoved()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

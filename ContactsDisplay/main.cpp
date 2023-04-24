@@ -1,22 +1,15 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QJniObject>
-#include <contactslist.h>
-
+#include <contactsmodel.h>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<ContactsList>("Contacts",1,0,"Contacts");
-
     QQmlApplicationEngine engine;
 
-    //QJniObject javaClass = QNativeInterface::QAndroidApplication::context();
-
-    //javaClass.callMethod<void>("addDummyContacts", "()V");
-
-
+    qmlRegisterType<ContactsModel>("ContactsModel",1,0,"ContactsModel");
 
     const QUrl url(u"qrc:/ContactsDisplay/Main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,

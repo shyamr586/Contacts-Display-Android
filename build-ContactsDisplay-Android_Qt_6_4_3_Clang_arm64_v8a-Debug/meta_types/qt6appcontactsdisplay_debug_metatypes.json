@@ -28,6 +28,44 @@
                         "access": "public",
                         "name": "contactsChanged",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "preItemAppended",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "postItemAppended",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "preItemRemoved",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "postItemRemoved",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "public",
+                        "name": "appendItem",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "removeItem",
+                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -39,6 +77,69 @@
             }
         ],
         "inputFile": "contactslist.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "ContactsModel",
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "size",
+                        "notify": "sizeChanged",
+                        "read": "getSize",
+                        "required": false,
+                        "reset": "resetSize()",
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "write": "setSize"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "contacts",
+                        "notify": "contactsChanged",
+                        "read": "getContacts",
+                        "required": false,
+                        "reset": "resetContacts()",
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QStringList",
+                        "user": false,
+                        "write": "setContacts"
+                    }
+                ],
+                "qualifiedClassName": "ContactsModel",
+                "signals": [
+                    {
+                        "access": "public",
+                        "name": "sizeChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "contactsChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "contactsmodel.h",
         "outputRevision": 68
     }
 ]

@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Window
-import Contacts
+import ContactsModel
 
 Window {
     width: 640
@@ -8,16 +8,15 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    Contacts {id: myContacts}
     ListView {
         height: parent.height; width: parent.width
-        model: myContacts.contacts
+        model: ContactsModel{}
         spacing: 20
         clip: true
         delegate : Rectangle {
             width: ListView.view.width; height: 40
             color: "light blue"
-            Text { text: myContacts.contacts[index] }
+            Text { text: model.Name + " - " + model.Number }
         }
     }
 }

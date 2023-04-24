@@ -26,6 +26,11 @@ ContactsList::ContactsList(QObject *parent)
     setContacts(returnedList);
 }
 
+QVector<ContactsStruct> ContactsList::items() const
+{
+    return mItems;
+}
+
 QStringList ContactsList::getContacts() const
 {
     return contacts;
@@ -42,4 +47,32 @@ void ContactsList::setContacts(const QStringList &newContacts)
 void ContactsList::resetContacts()
 {
     setContacts({}); // TODO: Adapt to use your actual default value
+}
+
+bool ContactsList::setItemAt(int index, const ContactsStruct &item)
+{
+    if (index < 0 || index >= mItems.size())
+        return false;
+
+    const ContactsStruct &oldItem = mItems.at(index);
+    if (item.name == oldItem.name && item.number == oldItem.number)
+        return false;
+
+    mItems[index] = item;
+    return true;
+}
+
+void ContactsList::appendItem()
+{
+    emit preItemAppended();
+
+    ContactsStruct item;
+    mItems.append(item);
+
+    emit postItemAppended();
+}
+
+void ContactsList::removeItem()
+{
+    // remove here
 }

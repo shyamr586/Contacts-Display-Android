@@ -13,9 +13,17 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
 
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
+
+
 import java.util.ArrayList;
 
 public class MainActivity extends QtActivity {
+    private ContactsObserver contactsObserver;
+    public long pointer;
 
     public ArrayList<String> contactsList = new ArrayList<>();
     private static final String[] REQUIRED_PERMISSIONS = {
@@ -23,6 +31,8 @@ public class MainActivity extends QtActivity {
             Manifest.permission.READ_CONTACTS
     };
     private static final int PERMISSIONS_REQUEST_CODE = 1;
+
+    public native void nativeFunction(long pointer, ArrayList<String> newArrList);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,14 @@ public class MainActivity extends QtActivity {
         } else {
             requestPermissions();
         }
+
+        contactsObserver = new ContactsObserver(new Handler());
+        getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
+
+    }
+
+    public void setPointer(long nativePointer) {
+        pointer = nativePointer;
     }
 
     private boolean hasAllPermissions() {
@@ -54,6 +72,42 @@ public class MainActivity extends QtActivity {
             if (hasAllPermissions()) {
                 Log.d("PERMISSIONS NOW CHANGED TO GRANTED? ", "YES");
             }
+        }
+    }
+
+    private class ContactsObserver extends ContentObserver {
+//        private final Uri CONTENT_CHANGE_URI = ContactsContract.Contacts.CONTENT_URI;
+
+        public ContactsObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            //Log.d("ON CHANGE WITHOUT URI, URI: ", CONTENT_CHANGE_URI+"");
+            Log.d("ON CHANGE WITHOUT URI, SELF CHANGE: ", selfChange+"");
+            ArrayList<String> newArrList = getContacts();
+            nativeFunction(pointer, newArrList);
+            //onChange(selfChange, CONTENT_CHANGE_URI);
+        }
+//
+//        @Override
+//        public void onChange(boolean selfChange, Uri uri) {
+//            //this.onChange(selfChange, uri);
+//            if (uri.equals(CONTENT_CHANGE_URI)) {
+//                //contactsList = getContacts();
+//                Log.d("ContactsObserver", "Contacts updated");
+//            }
+//        }
+    }
+
+    // unregister the content observer in onDestroy()
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (contactsObserver != null) {
+            getContentResolver().unregisterContentObserver(contactsObserver);
         }
     }
 
@@ -110,7 +164,6 @@ public class MainActivity extends QtActivity {
             requestPermissions(REQUIRED_PERMISSIONS, 1);
             return contacts; // Empty, as the user needs to grant permission first
         }
-
         ContentResolver contentResolver = getContentResolver();
         Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
 
@@ -133,7 +186,6 @@ public class MainActivity extends QtActivity {
             }
             cursor.close();
         }
-
         return contacts;
     }
 
