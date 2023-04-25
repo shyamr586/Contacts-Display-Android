@@ -14,6 +14,9 @@ class ContactsModel : public QAbstractListModel
 public:
     explicit ContactsModel(QObject *parent = nullptr);
     void loader(QStringList);
+    void addOrRemoveContacts(QStringList);
+    void addNewContact(int, QString);
+    void removeContact(int);
     QStringList contacts;
 
     enum {

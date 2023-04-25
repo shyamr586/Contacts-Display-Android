@@ -86,20 +86,11 @@ public class MainActivity extends QtActivity {
         public void onChange(boolean selfChange) {
             super.onChange(selfChange);
             //Log.d("ON CHANGE WITHOUT URI, URI: ", CONTENT_CHANGE_URI+"");
-            Log.d("ON CHANGE WITHOUT URI, SELF CHANGE: ", selfChange+"");
+            Log.d("Message from the content resolver: ", "Change detected.");
             ArrayList<String> newArrList = getContacts();
             nativeFunction(pointer, newArrList);
             //onChange(selfChange, CONTENT_CHANGE_URI);
         }
-//
-//        @Override
-//        public void onChange(boolean selfChange, Uri uri) {
-//            //this.onChange(selfChange, uri);
-//            if (uri.equals(CONTENT_CHANGE_URI)) {
-//                //contactsList = getContacts();
-//                Log.d("ContactsObserver", "Contacts updated");
-//            }
-//        }
     }
 
     // unregister the content observer in onDestroy()

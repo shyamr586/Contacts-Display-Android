@@ -1,7 +1,5 @@
 appContactsDisplay_autogen/timestamp: \
   /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/CMakeLists.txt \
-  /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactslist.cpp \
-  /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactslist.h \
   /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactsmodel.cpp \
   /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/contactsmodel.h \
   /Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/main.cpp \
@@ -151,9 +149,6 @@ appContactsDisplay_autogen/timestamp: \
   /Users/fyi/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/wctype.h \
   /Users/fyi/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/xlocale.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QAbstractListModel \
-  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QObject \
-  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QProperty \
-  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/QVector \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qabstractitemmodel.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qalgorithms.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qanystringview.h \
@@ -201,8 +196,6 @@ appContactsDisplay_autogen/timestamp: \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qobjectdefs_impl.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qpair.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qprocessordetection.h \
-  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qproperty.h \
-  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qpropertyprivate.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qrefcount.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qscopedpointer.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qscopeguard.h \
@@ -232,7 +225,6 @@ appContactsDisplay_autogen/timestamp: \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qutf8stringview.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qvariant.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qvarlengtharray.h \
-  /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qvector.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/include/QtCore/qversiontagging.h \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/ECMFindModuleHelpersStub.cmake \
   /Users/fyi/Qt/6.4.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/FindEGL.cmake \

@@ -1,14 +1,14 @@
 {
-	"backtrace" : 5,
+	"backtrace" : 4,
 	"backtraceGraph" : 
 	{
 		"commands" : 
 		[
-			"add_custom_target",
-			"_qt_internal_target_enable_qmllint",
+			"add_library",
 			"qt6_target_qml_sources",
 			"qt6_add_qml_module",
-			"qt_add_qml_module"
+			"qt_add_qml_module",
+			"target_sources"
 		],
 		"files" : 
 		[
@@ -21,45 +21,39 @@
 				"file" : 1
 			},
 			{
-				"command" : 4,
+				"command" : 3,
 				"file" : 1,
-				"line" : 34,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 670,
 				"parent" : 1
 			},
 			{
-				"command" : 2,
+				"command" : 1,
 				"file" : 0,
 				"line" : 611,
 				"parent" : 2
 			},
 			{
-				"command" : 1,
+				"command" : 0,
 				"file" : 0,
-				"line" : 2005,
+				"line" : 2186,
 				"parent" : 3
 			},
 			{
-				"command" : 0,
+				"command" : 4,
 				"file" : 0,
-				"line" : 808,
-				"parent" : 4
+				"line" : 2189,
+				"parent" : 3
 			}
 		]
 	},
-	"dependencies" : 
-	[
-		{
-			"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "appContactsDisplay_qmllint_json::@6890427a1f51a3e7e1df",
-	"name" : "appContactsDisplay_qmllint_json",
+	"id" : "appContactsDisplay_tooling::@6890427a1f51a3e7e1df",
+	"name" : "appContactsDisplay_tooling",
 	"paths" : 
 	{
 		"build" : ".",
@@ -87,15 +81,15 @@
 		{
 			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/CMakeFiles/appContactsDisplay_qmllint_json",
+			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/ContactsDisplay/Main.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/CMakeFiles/appContactsDisplay_qmllint_json.rule",
+			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/ContactsDisplay/Main.qml.rule",
 			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "UTILITY"
+	"type" : "INTERFACE_LIBRARY"
 }

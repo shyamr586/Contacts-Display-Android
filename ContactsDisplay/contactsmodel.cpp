@@ -20,8 +20,12 @@ Java_com_example_contactsdisplay_MainActivity_nativeFunction(JNIEnv *env, jobjec
         env->ReleaseStringUTFChars((jstring)javaString, rawString);
         env->DeleteLocalRef(javaString);
     }
-    reinterpret_cast<ContactsModel*>(ptr)->loader(editedList);
-    qDebug() << "First item is: "<< editedList.at(0);
+
+    ContactsModel* model = reinterpret_cast<ContactsModel*>(ptr);
+    QStringList modelContacts = model->contacts;
+    model->addOrRemoveContacts(editedList);
+
+    //model->loader(editedList);
     }
 }
 
@@ -49,9 +53,62 @@ ContactsModel::ContactsModel(QObject *parent)
 
 void ContactsModel::loader(QStringList newData)
 {
+    qDebug() << "The size of the existing contacts is: " << contacts.size();
+    qDebug() << "The size of the newData is: " << newData.size();
     beginResetModel();
     setContacts(newData);
     endResetModel();
+}
+
+void ContactsModel::addOrRemoveContacts(QStringList newList)
+{
+    qDebug() << "\n\n Size of contacts is: " << contacts.size();
+    qDebug() << "\n\n Size of newList is: " << newList.size();
+    bool removed = false;
+    if (contacts.size() > newList.size()) {
+        qDebug() << "!!!!!!!!Contacts have been removed from the phone";
+        for (int i = 0; i < newList.size(); i++) {
+            if (!newList.contains(contacts.at(i))){
+                qDebug() << "Removing: " << contacts.at(i);
+                removeContact(i);
+            }
+        }
+
+    }
+
+    else if (contacts.size() < newList.size()) {
+        qDebug() << "!!!!!!!!Contacts have been added on the phone";
+        for (int i = 0; i < newList.size(); i++) {
+            if (!contacts.contains(newList.at(i))){
+                qDebug() << "Need to append: " << newList.at(i);
+                addNewContact(i, newList.at(i));
+            }
+        }
+
+    }
+
+    else {
+        for (int i = 0; i < newList.size(); i++) {
+            if (newList.at(i)!=contacts.at(i)){
+                removeContact(i);
+                addNewContact(i, newList.at(i));
+            }
+        }
+    }
+}
+
+void ContactsModel::addNewContact(int index, QString value)
+{
+    beginInsertRows(QModelIndex(), index, index);
+    contacts.insert(index, value);
+    endInsertRows();
+}
+
+void ContactsModel::removeContact(int index)
+{
+    beginRemoveRows(QModelIndex(), index,index);
+    contacts.removeAt(index);
+    endRemoveRows();
 }
 
 QStringList ContactsModel::getContacts() const
@@ -85,7 +142,7 @@ int ContactsModel::rowCount(const QModelIndex &parent) const
         return 0;
 
     // FIXME: Implement me!
-    return size;
+    return contacts.size();
 }
 
 QVariant ContactsModel::data(const QModelIndex &index, int role) const

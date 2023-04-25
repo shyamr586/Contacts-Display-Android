@@ -23,7 +23,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 34,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -47,7 +47,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 798,
+				"line" : 808,
 				"parent" : 4
 			}
 		]
@@ -58,8 +58,8 @@
 			"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "appContactsDisplay_qmllint::@6890427a1f51a3e7e1df",
-	"name" : "appContactsDisplay_qmllint",
+	"id" : "appContactsDisplay_qmllint_json::@6890427a1f51a3e7e1df",
+	"name" : "appContactsDisplay_qmllint_json",
 	"paths" : 
 	{
 		"build" : ".",
@@ -87,13 +87,13 @@
 		{
 			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/CMakeFiles/appContactsDisplay_qmllint",
+			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/CMakeFiles/appContactsDisplay_qmllint_json",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/CMakeFiles/appContactsDisplay_qmllint.rule",
+			"path" : "/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/CMakeFiles/appContactsDisplay_qmllint_json.rule",
 			"sourceGroupIndex" : 1
 		}
 	],
