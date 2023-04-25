@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/ContactsDisplay">
-    <file alias="qmldir">/Users/fyi/Desktop/Contacts-Display-Android/build-ContactsDisplay-Android_Qt_6_4_3_Clang_arm64_v8a-Debug/ContactsDisplay/qmldir</file>
-  </qresource>
-</RCC>
-

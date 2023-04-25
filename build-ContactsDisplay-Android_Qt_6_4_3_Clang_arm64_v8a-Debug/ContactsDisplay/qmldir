@@ -1,5 +1,0 @@
-module ContactsDisplay
-typeinfo appContactsDisplay.qmltypes
-prefer :/ContactsDisplay/
-Main 1.0 Main.qml
-

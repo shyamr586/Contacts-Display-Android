@@ -1,9 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="android/src/com/example/contactsdisplay/MainActivity.java">/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/src/com/example/contactsdisplay/MainActivity.java</file>
-    <file alias="android/AndroidManifest.xml">/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/AndroidManifest.xml</file>
-    <file alias="android/build.gradle">/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/build.gradle</file>
-    <file alias="android/res/values/libs.xml">/Users/fyi/Desktop/Contacts-Display-Android/ContactsDisplay/android/res/values/libs.xml</file>
-  </qresource>
-</RCC>
-
