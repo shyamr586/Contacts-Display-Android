@@ -24,6 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends QtActivity {
     private ContactsObserver contactsObserver;
     public long pointer;
+    public ArrayList<String> oldContacts;
 
     public ArrayList<String> contactsList = new ArrayList<>();
     private static final String[] REQUIRED_PERMISSIONS = {
@@ -33,6 +34,8 @@ public class MainActivity extends QtActivity {
     private static final int PERMISSIONS_REQUEST_CODE = 1;
 
     public native void nativeFunction(long pointer, ArrayList<String> newArrList);
+    public native void addToModel(long pointer, String element, int index);
+    public native void removeFromModel(long pointer, int index);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,8 +91,9 @@ public class MainActivity extends QtActivity {
             //Log.d("ON CHANGE WITHOUT URI, URI: ", CONTENT_CHANGE_URI+"");
             Log.d("Message from the content resolver: ", "Change detected.");
             ArrayList<String> newArrList = getContacts();
-            nativeFunction(pointer, newArrList);
-            //onChange(selfChange, CONTENT_CHANGE_URI);
+            checkContactChanges(newArrList);
+            //--------------------------------------
+            //nativeFunction(pointer, newArrList);
         }
     }
 
@@ -102,11 +106,39 @@ public class MainActivity extends QtActivity {
         }
     }
 
+    public void checkContactChanges(ArrayList<String> newArrList){
+        for (int i = 0; i< newArrList.size(); i++) {
+            String element = newArrList.get(i);
+            if (!oldContacts.contains(element)) {
+                Log.d("New element:---> ",element);
+                Log.d("New elements index :---> ",i+"");
+                addToModel(pointer, element, i);
+                oldContacts.add(i,element);
+            }
+        }
+
+        for (int i = 0; i < oldContacts.size(); i++) {
+            String element = oldContacts.get(i);
+            if (!newArrList.contains(element)) {
+                Log.d("Removed element:---> ",element);
+                Log.d("Removed elements index :---> ",i+"");
+                removeFromModel(pointer,i);
+                oldContacts.remove(i);
+            }
+        }
+
+
+    }
+
     public void addDummyContacts(){
         for (int i = 0; i<1000; i++) {
             String dummyName = "Dummy Name "+(i+1);
             addDummyContact(dummyName);
         }
+    }
+
+    public void setInitialArrayList(){
+        oldContacts = getContacts();
     }
 
     public void addDummyContact(String dummyName){

@@ -2,31 +2,25 @@
 #include <QJniObject>
 #include <QGuiApplication>
 
+extern "C" {
+JNIEXPORT void JNICALL
+Java_com_example_contactsdisplay_MainActivity_addToModel(JNIEnv *env, jobject, jlong ptr, jstring elem, jint index) {
+    const char* chars = env->GetStringUTFChars(elem, nullptr);
+    if (chars){
+        QString qStr = QString::fromUtf8(chars);
+        env->ReleaseStringUTFChars(elem, chars);
+        ContactsModel* model = reinterpret_cast<ContactsModel*>(ptr);
+        model->addNewContact(index,qStr);
+    }
+}
+}
 
 extern "C" {
 JNIEXPORT void JNICALL
-Java_com_example_contactsdisplay_MainActivity_nativeFunction(JNIEnv *env, jobject, jlong ptr, jobject arrList) {
-    QJniObject javaClass2 = QNativeInterface::QAndroidApplication::context();
-    jclass arrayListClass = env->FindClass("java/util/ArrayList");
-    jmethodID sizeMethod = env->GetMethodID(arrayListClass, "size", "()I");
-    jmethodID getMethod = env->GetMethodID(arrayListClass, "get", "(I)Ljava/lang/Object;");
-    jint len = env->CallIntMethod(arrList, sizeMethod);
-    QStringList editedList;
-
-    for (jint i = 0; i < len; ++i) {
-        jobject javaString = env->CallObjectMethod(arrList, getMethod, i);
-        const char* rawString = env->GetStringUTFChars((jstring)javaString, nullptr);
-        editedList.append(QString::fromUtf8(rawString));
-        env->ReleaseStringUTFChars((jstring)javaString, rawString);
-        env->DeleteLocalRef(javaString);
-    }
-
+Java_com_example_contactsdisplay_MainActivity_removeFromModel(JNIEnv *env, jobject, jlong ptr, jint index) {
     ContactsModel* model = reinterpret_cast<ContactsModel*>(ptr);
-    QStringList modelContacts = model->contacts;
-    model->addOrRemoveContacts(editedList);
-
-    //model->loader(editedList);
-    }
+    model->removeContact(index);
+}
 }
 
 
@@ -37,64 +31,18 @@ ContactsModel::ContactsModel(QObject *parent)
     QJniObject javaClass2 = QNativeInterface::QAndroidApplication::context();
     QJniObject arrayList = javaClass2.callObjectMethod("getContacts", "()Ljava/util/ArrayList;");
     javaClass2.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
+    javaClass2.callMethod<void>("setInitialArrayList","()V");
     int size = (int)arrayList.callMethod<jint>("size","()I");
     setSize(size);
     QStringList finalList;
 
     for(int i = 0; i < size; i++) {
         QJniObject element = arrayList.callObjectMethod("get", "(I)Ljava/lang/Object;", i);
-
         QString qstring = element.toString();
         finalList.append(qstring);
     }
     setContacts(finalList);
 
-}
-
-void ContactsModel::loader(QStringList newData)
-{
-    qDebug() << "The size of the existing contacts is: " << contacts.size();
-    qDebug() << "The size of the newData is: " << newData.size();
-    beginResetModel();
-    setContacts(newData);
-    endResetModel();
-}
-
-void ContactsModel::addOrRemoveContacts(QStringList newList)
-{
-    qDebug() << "\n\n Size of contacts is: " << contacts.size();
-    qDebug() << "\n\n Size of newList is: " << newList.size();
-    bool removed = false;
-    if (contacts.size() > newList.size()) {
-        qDebug() << "!!!!!!!!Contacts have been removed from the phone";
-        for (int i = 0; i < newList.size(); i++) {
-            if (!newList.contains(contacts.at(i))){
-                qDebug() << "Removing: " << contacts.at(i);
-                removeContact(i);
-            }
-        }
-
-    }
-
-    else if (contacts.size() < newList.size()) {
-        qDebug() << "!!!!!!!!Contacts have been added on the phone";
-        for (int i = 0; i < newList.size(); i++) {
-            if (!contacts.contains(newList.at(i))){
-                qDebug() << "Need to append: " << newList.at(i);
-                addNewContact(i, newList.at(i));
-            }
-        }
-
-    }
-
-    else {
-        for (int i = 0; i < newList.size(); i++) {
-            if (newList.at(i)!=contacts.at(i)){
-                removeContact(i);
-                addNewContact(i, newList.at(i));
-            }
-        }
-    }
 }
 
 void ContactsModel::addNewContact(int index, QString value)
