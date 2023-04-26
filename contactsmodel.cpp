@@ -71,11 +71,6 @@ void ContactsModel::setContacts(const QStringList &newContacts)
     emit contactsChanged();
 }
 
-void ContactsModel::resetContacts()
-{
-    setContacts({}); // TODO: Adapt to use your actual default value
-}
-
 QStringList ContactsModel::datas() const
 {
     return mDatas;

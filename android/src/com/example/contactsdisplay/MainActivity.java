@@ -76,7 +76,7 @@ public class MainActivity extends QtActivity {
         public void onChange(boolean selfChange) {
             super.onChange(selfChange);
             long tStart = System.currentTimeMillis();
-            Log.d("Message from the content resolver: ", "Change detected.");
+            Log.d("Message from the content observer: ", "Change in contacts detected.");
             ArrayList<String> newArrList = getContacts();
             checkContactChanges(newArrList);
             long tEnd = System.currentTimeMillis();

@@ -36,11 +36,8 @@ public:
 
     virtual QHash<int, QByteArray> roleNames() const override;
 
-    void resetSize();
-
     QStringList getContacts() const;
     void setContacts(const QStringList &newContacts);
-    void resetContacts();
 
     QStringList datas() const;
 
