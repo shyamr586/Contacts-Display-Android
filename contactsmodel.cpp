@@ -33,7 +33,6 @@ ContactsModel::ContactsModel(QObject *parent)
     javaClass2.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
     javaClass2.callMethod<void>("setInitialArrayList","()V");
     int size = (int)arrayList.callMethod<jint>("size","()I");
-    setSize(size);
     QStringList finalList;
 
     for(int i = 0; i < size; i++) {
@@ -130,25 +129,7 @@ Qt::ItemFlags ContactsModel::flags(const QModelIndex &index) const
 QHash<int, QByteArray> ContactsModel::roleNames() const
 {
     QHash<int, QByteArray> names;
-    names[NameRole] = "Name";
-    names[NumberRole] = "Number";
+    names[NameRole] = "name";
+    names[NumberRole] = "number";
     return names;
-}
-
-int ContactsModel::getSize() const
-{
-    return size;
-}
-
-void ContactsModel::setSize(int newSize)
-{
-    if (size == newSize)
-        return;
-    size = newSize;
-    emit sizeChanged();
-}
-
-void ContactsModel::resetSize()
-{
-    setSize({}); // TODO: Adapt to use your actual default value
 }

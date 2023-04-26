@@ -16,7 +16,7 @@ Window {
         delegate : Rectangle {
             width: ListView.view.width; height: 40
             color: "light blue"
-            Text { text: model.Name + " - " + model.Number }
+            Text { text: model.name + " - " + model.number }
         }
     }
 }

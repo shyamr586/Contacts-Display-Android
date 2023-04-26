@@ -1,39 +1,30 @@
 package com.example.contactsdisplay;
 
-import org.qtproject.qt.android.bindings.QtActivity;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.pm.PackageManager;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.util.Log;
 
-import android.database.ContentObserver;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Message;
-
+import org.qtproject.qt.android.bindings.QtActivity;
 
 import java.util.ArrayList;
 
 public class MainActivity extends QtActivity {
     private ContactsObserver contactsObserver;
     public long pointer;
-    public ArrayList<String> oldContacts;
-
-    public ArrayList<String> contactsList = new ArrayList<>();
+    public ArrayList<String> initialContacts;
     private static final String[] REQUIRED_PERMISSIONS = {
             Manifest.permission.WRITE_CONTACTS,
             Manifest.permission.READ_CONTACTS
     };
     private static final int PERMISSIONS_REQUEST_CODE = 1;
-
-    public native void nativeFunction(long pointer, ArrayList<String> newArrList);
     public native void addToModel(long pointer, String element, int index);
     public native void removeFromModel(long pointer, int index);
 
@@ -46,10 +37,8 @@ public class MainActivity extends QtActivity {
         } else {
             requestPermissions();
         }
-
         contactsObserver = new ContactsObserver(new Handler());
         getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
-
     }
 
     public void setPointer(long nativePointer) {
@@ -79,8 +68,6 @@ public class MainActivity extends QtActivity {
     }
 
     private class ContactsObserver extends ContentObserver {
-//        private final Uri CONTENT_CHANGE_URI = ContactsContract.Contacts.CONTENT_URI;
-
         public ContactsObserver(Handler handler) {
             super(handler);
         }
@@ -88,12 +75,9 @@ public class MainActivity extends QtActivity {
         @Override
         public void onChange(boolean selfChange) {
             super.onChange(selfChange);
-            //Log.d("ON CHANGE WITHOUT URI, URI: ", CONTENT_CHANGE_URI+"");
             Log.d("Message from the content resolver: ", "Change detected.");
             ArrayList<String> newArrList = getContacts();
             checkContactChanges(newArrList);
-            //--------------------------------------
-            //nativeFunction(pointer, newArrList);
         }
     }
 
@@ -109,21 +93,21 @@ public class MainActivity extends QtActivity {
     public void checkContactChanges(ArrayList<String> newArrList){
         for (int i = 0; i< newArrList.size(); i++) {
             String element = newArrList.get(i);
-            if (!oldContacts.contains(element)) {
+            if (!initialContacts.contains(element)) {
                 Log.d("New element:---> ",element);
                 Log.d("New elements index :---> ",i+"");
                 addToModel(pointer, element, i);
-                oldContacts.add(i,element);
+                initialContacts.add(i,element);
             }
         }
 
-        for (int i = 0; i < oldContacts.size(); i++) {
-            String element = oldContacts.get(i);
+        for (int i = 0; i < initialContacts.size(); i++) {
+            String element = initialContacts.get(i);
             if (!newArrList.contains(element)) {
                 Log.d("Removed element:---> ",element);
                 Log.d("Removed elements index :---> ",i+"");
                 removeFromModel(pointer,i);
-                oldContacts.remove(i);
+                initialContacts.remove(i);
             }
         }
 
@@ -138,7 +122,7 @@ public class MainActivity extends QtActivity {
     }
 
     public void setInitialArrayList(){
-        oldContacts = getContacts();
+        initialContacts = getContacts();
     }
 
     public void addDummyContact(String dummyName){
