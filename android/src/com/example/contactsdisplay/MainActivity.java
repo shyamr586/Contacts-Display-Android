@@ -75,9 +75,13 @@ public class MainActivity extends QtActivity {
         @Override
         public void onChange(boolean selfChange) {
             super.onChange(selfChange);
+            long tStart = System.currentTimeMillis();
             Log.d("Message from the content resolver: ", "Change detected.");
             ArrayList<String> newArrList = getContacts();
             checkContactChanges(newArrList);
+            long tEnd = System.currentTimeMillis();
+            long tDelta = tEnd - tStart;
+            Log.d("Time elapsed in milliseconds for change: ", tDelta+"");
         }
     }
 

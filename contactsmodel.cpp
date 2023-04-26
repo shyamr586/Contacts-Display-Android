@@ -28,10 +28,10 @@ ContactsModel::ContactsModel(QObject *parent)
     : QAbstractListModel(parent)
     , mList(nullptr)
 {
-    QJniObject javaClass2 = QNativeInterface::QAndroidApplication::context();
-    QJniObject arrayList = javaClass2.callObjectMethod("getContacts", "()Ljava/util/ArrayList;");
-    javaClass2.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
-    javaClass2.callMethod<void>("setInitialArrayList","()V");
+    QJniObject javaClass = QNativeInterface::QAndroidApplication::context();
+    QJniObject arrayList = javaClass.callObjectMethod("getContacts", "()Ljava/util/ArrayList;");
+    javaClass.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
+    javaClass.callMethod<void>("setInitialArrayList","()V");
     int size = (int)arrayList.callMethod<jint>("size","()I");
     QStringList finalList;
 
