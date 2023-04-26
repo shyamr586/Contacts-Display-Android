@@ -75,13 +75,13 @@ public class MainActivity extends QtActivity {
         @Override
         public void onChange(boolean selfChange) {
             super.onChange(selfChange);
-            long tStart = System.currentTimeMillis();
+            //long tStart = System.currentTimeMillis();
             Log.d("Message from the content observer: ", "Change in contacts detected.");
-            ArrayList<String> newArrList = getContacts();
+            ArrayList<String> newArrList = getContacts(false);
             checkContactChanges(newArrList);
-            long tEnd = System.currentTimeMillis();
-            long tDelta = tEnd - tStart;
-            Log.d("Time elapsed in milliseconds for change: ", tDelta+"");
+            //long tEnd = System.currentTimeMillis();
+            //long tDelta = tEnd - tStart;
+            //Log.d("Time elapsed in milliseconds for change: ", tDelta+"");
         }
     }
 
@@ -95,6 +95,7 @@ public class MainActivity extends QtActivity {
     }
 
     public void checkContactChanges(ArrayList<String> newArrList){
+
         for (int i = 0; i< newArrList.size(); i++) {
             String element = newArrList.get(i);
             if (!initialContacts.contains(element)) {
@@ -125,9 +126,9 @@ public class MainActivity extends QtActivity {
         }
     }
 
-    public void setInitialArrayList(){
-        initialContacts = getContacts();
-    }
+//    public void setInitialArrayList(){
+//        initialContacts = getContacts();
+//    }
 
     public void addDummyContact(String dummyName){
         ArrayList<ContentProviderOperation> operations = new ArrayList<>();
@@ -167,7 +168,9 @@ public class MainActivity extends QtActivity {
     }
 
     @SuppressLint("Range")
-    public ArrayList<String> getContacts() {
+    public ArrayList<String> getContacts(boolean initial) {
+
+        long tStart = System.currentTimeMillis();
         ArrayList<String> contacts = new ArrayList<>();
 
         if (checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
@@ -197,7 +200,14 @@ public class MainActivity extends QtActivity {
             }
             cursor.close();
         }
+        long tEnd = System.currentTimeMillis();
+        long tDelta = tEnd - tStart;
+        Log.d("Time elapsed in milliseconds for loading contacts: ", tDelta+"");
+        if (initial){
+            initialContacts = contacts;
+        }
         return contacts;
+
     }
 
 }

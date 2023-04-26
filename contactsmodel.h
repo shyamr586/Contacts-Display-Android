@@ -8,7 +8,7 @@ class ContactsList;
 class ContactsModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QStringList contacts READ getContacts WRITE setContacts RESET resetContacts NOTIFY contactsChanged)
+    Q_PROPERTY(QStringList contacts READ getContacts WRITE setContacts NOTIFY contactsChanged)
 
 public:
     explicit ContactsModel(QObject *parent = nullptr);

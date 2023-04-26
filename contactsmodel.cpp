@@ -29,9 +29,9 @@ ContactsModel::ContactsModel(QObject *parent)
     , mList(nullptr)
 {
     QJniObject javaClass = QNativeInterface::QAndroidApplication::context();
-    QJniObject arrayList = javaClass.callObjectMethod("getContacts", "()Ljava/util/ArrayList;");
+    QJniObject arrayList = javaClass.callObjectMethod("getContacts", "(Z)Ljava/util/ArrayList;", true);
     javaClass.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
-    javaClass.callMethod<void>("setInitialArrayList","()V");
+    //javaClass.callMethod<void>("setInitialArrayList","()V");
     int size = (int)arrayList.callMethod<jint>("size","()I");
     QStringList finalList;
 
