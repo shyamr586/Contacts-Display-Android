@@ -4,6 +4,27 @@
 
 extern "C" {
 JNIEXPORT void JNICALL
+Java_com_example_contactsdisplay_MainActivity_setQStringList(JNIEnv *env, jobject, jlong ptr, jobject arrayList) {
+    ContactsModel* contactsModelInstance = reinterpret_cast<ContactsModel*>(ptr);
+
+    QStringList stringList;
+    jclass arrayListClass = env->GetObjectClass(arrayList);
+    jmethodID sizeMethod = env->GetMethodID(arrayListClass, "size", "()I");
+    jint size = env->CallIntMethod(arrayList, sizeMethod);
+    jmethodID getMethod = env->GetMethodID(arrayListClass, "get", "(I)Ljava/lang/Object;");
+    for (jint i = 0; i < size; i++) {
+        jstring string = (jstring) env->CallObjectMethod(arrayList, getMethod, i);
+        const char *rawString = env->GetStringUTFChars(string, 0);
+        stringList.append(QString::fromUtf8(rawString));
+        env->ReleaseStringUTFChars(string, rawString);
+
+    }
+    contactsModelInstance->initializeData(stringList);
+}
+}
+
+extern "C" {
+JNIEXPORT void JNICALL
 Java_com_example_contactsdisplay_MainActivity_addToModel(JNIEnv *env, jobject, jlong ptr, jstring elem, jint index) {
     const char* chars = env->GetStringUTFChars(elem, nullptr);
     if (chars){
@@ -29,18 +50,8 @@ ContactsModel::ContactsModel(QObject *parent)
     , mList(nullptr)
 {
     QJniObject javaClass = QNativeInterface::QAndroidApplication::context();
-    QJniObject arrayList = javaClass.callObjectMethod("getContacts", "(Z)Ljava/util/ArrayList;", true);
     javaClass.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
-    //javaClass.callMethod<void>("setInitialArrayList","()V");
-    int size = (int)arrayList.callMethod<jint>("size","()I");
-    QStringList finalList;
-
-    for(int i = 0; i < size; i++) {
-        QJniObject element = arrayList.callObjectMethod("get", "(I)Ljava/lang/Object;", i);
-        QString qstring = element.toString();
-        finalList.append(qstring);
-    }
-    setContacts(finalList);
+    javaClass.callMethod<void>("getContacts", "(Z)V", true);
 
 }
 
@@ -56,6 +67,13 @@ void ContactsModel::removeContact(int index)
     beginRemoveRows(QModelIndex(), index,index);
     contacts.removeAt(index);
     endRemoveRows();
+}
+
+void ContactsModel::initializeData(QStringList stringList)
+{
+    beginResetModel();
+    setContacts(stringList);
+    endResetModel();
 }
 
 QStringList ContactsModel::getContacts() const

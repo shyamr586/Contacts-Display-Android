@@ -16,6 +16,7 @@ public:
     void addOrRemoveContacts(QStringList);
     void addNewContact(int, QString);
     void removeContact(int);
+    void initializeData(QStringList);
     QStringList contacts;
 
     enum {

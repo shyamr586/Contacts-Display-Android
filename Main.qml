@@ -9,6 +9,7 @@ Window {
     title: qsTr("Hello World")
 
     ListView {
+        id: listView
         height: parent.height; width: parent.width
         model: ContactsModel{}
         spacing: 20
@@ -19,4 +20,6 @@ Window {
             Text { text: model.name + " - " + model.number }
         }
     }
+
+    Text {anchors.centerIn: parent; visible: listView.count===0; text: "The data is currently loading."; }
 }
