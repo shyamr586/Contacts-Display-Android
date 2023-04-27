@@ -167,61 +167,64 @@ public class MainActivity extends QtActivity {
         }
     }
 
-    public class BackgroundThreadClass extends AsyncTask<Boolean, Void, Void> {
-        public String tag = "From the AsyncTask class";
-        @SuppressLint("Range")
-        @Override
-        protected Void doInBackground(Boolean... params) {
-            boolean initial = params[0];
-            long tStart = System.currentTimeMillis();
-            ArrayList<String> contacts = new ArrayList<>();
+    // do new AsyncTask instead of extending from class
 
-            if (checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-                Log.d("METHOD OF CHECKING PERMISSION IN GET CONTACTS", "IS RUNNING");
-                // Request the required permission if it hasn't been granted yet
-                requestPermissions(REQUIRED_PERMISSIONS, 1);
-                //return contacts; // Empty, as the user needs to grant permission first
-            }
-            ContentResolver contentResolver = getContentResolver();
-            Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
 
-            if (cursor != null && ((Cursor) cursor).getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
-                    @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-
-                    if (Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
-                        Cursor phoneCursor = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[]{id}, null);
-
-                        if (phoneCursor != null) {
-                            while (phoneCursor.moveToNext()) {
-                                String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                                contacts.add(name + ": " + phoneNumber);
-                            }
-                            phoneCursor.close();
-                        }
-                    }
-                }
-                cursor.close();
-            }
-            long tEnd = System.currentTimeMillis();
-            long tDelta = tEnd - tStart;
-            Log.d("Time elapsed in milliseconds for loading contacts: ", tDelta+"");
-            if (initial){
-                initialContacts = contacts;
-            } else {
-                checkContactChanges(contacts);
-            }
-            Log.d(tag, "SIZE OF THE CONTACTS ARRAYLIST IS "+contacts.size()+"");
-            setQStringList(pointer, contacts);
-            //return contacts;
-            return null;
-        }
-    }
 
     public void getContacts(boolean initial) {
-        BackgroundThreadClass bgThread = new BackgroundThreadClass();
-        bgThread.execute(initial);
+        @SuppressLint("StaticFieldLeak")
+        AsyncTask<Boolean, Void, Void> task= new AsyncTask<Boolean, Void, Void>() {
+            public String tag = "From the AsyncTask class";
+            @SuppressLint("Range")
+            @Override
+            protected Void doInBackground(Boolean... params) {
+                boolean initial = params[0];
+                long tStart = System.currentTimeMillis();
+                ArrayList<String> contacts = new ArrayList<>();
+
+                if (checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                    Log.d("METHOD OF CHECKING PERMISSION IN GET CONTACTS", "IS RUNNING");
+                    // Request the required permission if it hasn't been granted yet
+                    requestPermissions(REQUIRED_PERMISSIONS, 1);
+                    //return contacts; // Empty, as the user needs to grant permission first
+                }
+                ContentResolver contentResolver = getContentResolver();
+                Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
+
+                if (cursor != null && ((Cursor) cursor).getCount() > 0) {
+                    while (cursor.moveToNext()) {
+                        @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+                        @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+
+                        if (Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+                            Cursor phoneCursor = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[]{id}, null);
+
+                            if (phoneCursor != null) {
+                                while (phoneCursor.moveToNext()) {
+                                    String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                                    contacts.add(name + ": " + phoneNumber);
+                                }
+                                phoneCursor.close();
+                            }
+                        }
+                    }
+                    cursor.close();
+                }
+                long tEnd = System.currentTimeMillis();
+                long tDelta = tEnd - tStart;
+                Log.d("Time elapsed in milliseconds for loading contacts: ", tDelta+"");
+                if (initial){
+                    initialContacts = contacts;
+                } else {
+                    checkContactChanges(contacts);
+                }
+                Log.d(tag, "SIZE OF THE CONTACTS ARRAYLIST IS "+contacts.size()+"");
+                setQStringList(pointer, contacts);
+                //return contacts;
+                return null;
+            }
+        };
+        task.execute(initial);
     }
 
 }
