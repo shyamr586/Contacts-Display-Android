@@ -62,7 +62,6 @@ public class MainActivity extends QtActivity {
     public void onRequestPermissionsResult(int requestCode,  String[] permissions, int[] grantResults) {
         if (requestCode == PERMISSIONS_REQUEST_CODE) {
             if (hasAllPermissions()) {
-                Log.d("PERMISSIONS NOW CHANGED TO GRANTED? ", "YES");
                 contactsObserver = new ContactsObserver(new Handler());
                 getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
                 getContacts(true);
@@ -166,21 +165,19 @@ public class MainActivity extends QtActivity {
 
 
     public void getContacts(boolean initial) {
-        @SuppressLint("StaticFieldLeak")
-        AsyncTask<Boolean, Void, Void> task= new AsyncTask<Boolean, Void, Void>() {
-            public String tag = "From the AsyncTask class";
-            @SuppressLint("Range")
-            @Override
-            protected Void doInBackground(Boolean... params) {
-                boolean initial = params[0];
-                long tStart = System.currentTimeMillis();
-                ArrayList<String> contacts = new ArrayList<>();
+        if (hasAllPermissions()) {
+            @SuppressLint("StaticFieldLeak")
+            AsyncTask<Boolean, Void, Void> task = new AsyncTask<Boolean, Void, Void>() {
+                public String tag = "From the AsyncTask class";
 
-                if (hasAllPermissions()) {
+                @SuppressLint("Range")
+                @Override
+                protected Void doInBackground(Boolean... params) {
+                    boolean initial = params[0];
+                    long tStart = System.currentTimeMillis();
+                    ArrayList<String> contacts = new ArrayList<>();
 
-                    Log.d("ALL PERMISSIONS ALREADY GRANTED? ", "YES");
-
-                    if (contactsObserver == null){
+                    if (contactsObserver == null) {
                         contactsObserver = new ContactsObserver(new Handler());
                         getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
                     }
@@ -208,22 +205,23 @@ public class MainActivity extends QtActivity {
                     }
                     long tEnd = System.currentTimeMillis();
                     long tDelta = tEnd - tStart;
-                    Log.d("Time elapsed in milliseconds for loading contacts: ", tDelta+"");
-                    if (initial){
+                    Log.d("Time elapsed in milliseconds for loading contacts: ", tDelta + "");
+                    if (initial) {
                         initialContacts = contacts;
                     } else {
                         checkContactChanges(contacts);
                     }
-                    Log.d(tag, "SIZE OF THE CONTACTS ARRAYLIST IS "+contacts.size()+"");
+                    Log.d(tag, "SIZE OF THE CONTACTS ARRAYLIST IS " + contacts.size() + "");
                     setQStringList(pointer, contacts);
-                } else {
-                    requestPermissions();
+
+                    //return contacts;
+                    return null;
                 }
-                //return contacts;
-                return null;
-            }
-        };
-        task.execute(initial);
+            };
+            task.execute(initial);
+        } else {
+            requestPermissions();
+        }
     }
 
 }
