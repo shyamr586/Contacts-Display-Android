@@ -51,7 +51,7 @@ ContactsModel::ContactsModel(QObject *parent)
 {
     QJniObject javaClass = QNativeInterface::QAndroidApplication::context();
     javaClass.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
-    javaClass.callMethod<void>("getContacts", "(Z)V", true);
+    //javaClass.callMethod<void>("getContacts", "(Z)V", true);
 
 }
 

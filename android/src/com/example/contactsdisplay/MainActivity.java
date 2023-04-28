@@ -38,7 +38,7 @@ public class MainActivity extends QtActivity {
         super.onCreate(savedInstanceState);
         if (hasAllPermissions()) {
             Log.d("ALL PERMISSIONS ALREADY GRANTED? ", "YES");
-            //getContacts(true);
+            getContacts(true);
             contactsObserver = new ContactsObserver(new Handler());
             getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
         } else {
@@ -71,7 +71,7 @@ public class MainActivity extends QtActivity {
                 Log.d("PERMISSIONS NOW CHANGED TO GRANTED? ", "YES");
                 contactsObserver = new ContactsObserver(new Handler());
                 getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
-                //getContacts(true);
+                getContacts(true);
                 // IMPROVEMENT: call the get contacts stuff here
             }
         }
@@ -188,6 +188,7 @@ public class MainActivity extends QtActivity {
                     requestPermissions(REQUIRED_PERMISSIONS, 1);
                     //return contacts; // Empty, as the user needs to grant permission first
                 }
+
                 ContentResolver contentResolver = getContentResolver();
                 Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
 
