@@ -1,53 +1,66 @@
 #include "contactsmodel.h"
 #include <QJniObject>
 #include <QGuiApplication>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
 
 extern "C" {
 JNIEXPORT void JNICALL
-Java_com_example_contactsdisplay_MainActivity_setQStringList(JNIEnv *env, jobject, jlong ptr, jobject arrayList) {
+Java_com_example_contactsdisplay_MainActivity_setQStringList(JNIEnv *env, jobject, jlong ptr, jstring jstr, bool initial) {
+
+    QMap<QString, QStringList> contactsMap;
+
+    const char *cstr = env->GetStringUTFChars(jstr, nullptr);
+    QString contacts = QString::fromUtf8(cstr);
+    env->ReleaseStringUTFChars(jstr, cstr);
+
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(contacts.toUtf8());
+    //QString qstr = QString::fromUtf8(env->GetStringUTFChars(jstr, NULL));
+    env->ReleaseStringUTFChars(jstr, nullptr);
+    // Extract the data from the document
+    if (jsonDoc.isArray()) {
+        QJsonArray jsonArray = jsonDoc.array();
+
+        // Iterate through the array
+        for (int i = 0; i < jsonArray.size(); i++) {
+            QJsonObject jsonObj = jsonArray[i].toObject();
+            QString contactID = jsonObj.value("contactID").toString();
+            QString name = jsonObj.value("name").toString();
+            QString phoneNumber = jsonObj.value("phoneNumber").toString();
+
+            QStringList contactData;
+            contactData << name << phoneNumber;
+            contactsMap.insert(contactID, contactData);
+        }
+    }
+
     ContactsModel* contactsModelInstance = reinterpret_cast<ContactsModel*>(ptr);
+    qDebug() << "FROM QT, The contacts map is: " << contactsMap;
 
-    QStringList stringList;
-    jclass arrayListClass = env->GetObjectClass(arrayList);
-    jmethodID sizeMethod = env->GetMethodID(arrayListClass, "size", "()I");
-    jint size = env->CallIntMethod(arrayList, sizeMethod);
-    jmethodID getMethod = env->GetMethodID(arrayListClass, "get", "(I)Ljava/lang/Object;");
-    for (jint i = 0; i < size; i++) {
-        jstring string = (jstring) env->CallObjectMethod(arrayList, getMethod, i);
-        const char *rawString = env->GetStringUTFChars(string, 0);
-        stringList.append(QString::fromUtf8(rawString));
-        env->ReleaseStringUTFChars(string, rawString);
-
-    }
-    contactsModelInstance->initializeData(stringList);
-}
-}
-
-extern "C" {
-JNIEXPORT void JNICALL
-Java_com_example_contactsdisplay_MainActivity_addToModel(JNIEnv *env, jobject, jlong ptr, jstring elem, jint index) {
-    const char* chars = env->GetStringUTFChars(elem, nullptr);
-    if (chars){
-        QString qStr = QString::fromUtf8(chars);
-        env->ReleaseStringUTFChars(elem, chars);
-        ContactsModel* model = reinterpret_cast<ContactsModel*>(ptr);
-        model->addNewContact(index,qStr);
+    if (initial){
+        contactsModelInstance->initializeData(contactsMap);
+    } else {
+        contactsModelInstance->addNewContact(contactsMap);
     }
 }
 }
 
 extern "C" {
 JNIEXPORT void JNICALL
-Java_com_example_contactsdisplay_MainActivity_removeFromModel(JNIEnv *env, jobject, jlong ptr, jint index) {
+Java_com_example_contactsdisplay_MainActivity_removeFromModel(JNIEnv *env, jobject, jlong ptr, jstring jContactId) {
+
+    const char *cContactId = env->GetStringUTFChars(jContactId, NULL);
+    QString contactId = QString::fromUtf8(cContactId);
+    env->ReleaseStringUTFChars(jContactId, cContactId);
     ContactsModel* model = reinterpret_cast<ContactsModel*>(ptr);
-    model->removeContact(index);
+    model->removeContact(contactId);
 }
 }
 
 
 ContactsModel::ContactsModel(QObject *parent)
     : QAbstractListModel(parent)
-    , mList(nullptr)
 {
     QJniObject javaClass = QNativeInterface::QAndroidApplication::context();
     javaClass.callMethod<void>("setPointer","(J)V", (long long)(ContactsModel*)this);
@@ -55,43 +68,66 @@ ContactsModel::ContactsModel(QObject *parent)
 
 }
 
-void ContactsModel::addNewContact(int index, QString value)
-{
-    beginInsertRows(QModelIndex(), index, index);
-    contacts.insert(index, value);
-    endInsertRows();
-}
-
-void ContactsModel::removeContact(int index)
-{
-    beginRemoveRows(QModelIndex(), index,index);
-    contacts.removeAt(index);
-    endRemoveRows();
-}
-
-void ContactsModel::initializeData(QStringList stringList)
+void ContactsModel::addNewContact(QMap<QString, QStringList> newContacts)
 {
     beginResetModel();
-    setContacts(stringList);
+    //beginInsertRows(QModelIndex(), 0, 0);
+    //    contacts.insert(index, value);
+    qDebug()<< "The size of newContacts is: " << newContacts.size();
+    for (auto it = newContacts.constBegin(); it != newContacts.constEnd(); ++it) {
+        const QString contactId = it.key();
+        const QStringList values = it.value();
+        qDebug()<< "The value of newContacts contactid is: " << contactId;
+        if (contacts.contains(contactId)) {
+            // Update an existing contact
+            contacts[contactId] = values;
+        } else {
+            if (!contactId.isNull()){
+                contacts.insert(contactId, values);
+            }
+            // Add a new contact
+        }
+    }
+    qDebug() << "THE VALUE OF CONTACTS IS: " << contacts;
+    for (auto it = contacts.begin(); it != contacts.end(); ) {
+        if (it.key().isNull() || it.value().isEmpty()) {
+            it = contacts.erase(it);
+        } else {
+            ++it;
+        }
+    }
+    //endInsertRows();
+    endResetModel();
+    emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+}
+
+void ContactsModel::removeContact(QString key)
+{
+    qDebug() << "Need to remove " << contacts[key];
+    beginRemoveRows(QModelIndex(), 0,0);
+    contacts.remove(key);
+    endRemoveRows();
+    emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+}
+
+void ContactsModel::initializeData(QMap<QString, QStringList> value)
+{
+    beginResetModel();
+    setContacts(value);
     endResetModel();
 }
 
-QStringList ContactsModel::getContacts() const
+QMap<QString, QStringList> ContactsModel::getContacts() const
 {
     return contacts;
 }
 
-void ContactsModel::setContacts(const QStringList &newContacts)
+void ContactsModel::setContacts(const QMap<QString, QStringList> &newContacts)
 {
     if (contacts == newContacts)
         return;
     contacts = newContacts;
     emit contactsChanged();
-}
-
-QStringList ContactsModel::datas() const
-{
-    return mDatas;
 }
 
 int ContactsModel::rowCount(const QModelIndex &parent) const
@@ -113,9 +149,13 @@ QVariant ContactsModel::data(const QModelIndex &index, int role) const
     // FIXME: Implement me!
     switch (role) {
     case NameRole:
-        return QVariant(contacts.at(index.row()).split(":")[0]);
+        //        return "name";
+        return contacts.values().at(index.row()).at(0);
+        //return QVariant(contacts.at(index.row()).split(":")[0]);
     case NumberRole:
-        return QVariant(contacts.at(index.row()).split(":")[1]);
+        //        return "number";
+        return contacts.values().at(index.row()).at(1);
+        //return QVariant(contacts.at(index.row()).split(":")[1]);
     }
 
     return QVariant();
