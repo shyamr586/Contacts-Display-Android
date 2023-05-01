@@ -2,21 +2,22 @@
 #define CONTACTSMODEL_H
 
 #include <QAbstractListModel>
-#include <QMap>
+#include <QList>
+#include <QVector>
 
 class ContactsList;
 
 class ContactsModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QMap<QString, QStringList> contacts READ getContacts WRITE setContacts NOTIFY contactsChanged)
+    Q_PROPERTY(QList<QVector<QString>> contacts READ getContacts WRITE setContacts NOTIFY contactsChanged)
 
 public:
     explicit ContactsModel(QObject *parent = nullptr);
-    void addNewContact(QMap<QString, QStringList>);
+    void addNewContact(QList<QVector<QString>>);
     void removeContact(QString);
-    void initializeData(QMap<QString, QStringList>);
-    QMap<QString, QStringList> contacts;
+    void initializeData(QList<QVector<QString>>);
+    QList<QVector<QString>> contacts;
 
     enum {
         NameRole,
@@ -36,8 +37,8 @@ public:
 
     virtual QHash<int, QByteArray> roleNames() const override;
 
-    QMap<QString, QStringList> getContacts() const;
-    void setContacts(const QMap<QString, QStringList> &newContacts);
+    QList<QVector<QString>> getContacts() const;
+    void setContacts(const QList<QVector<QString>> &newContacts);
 
     QStringList datas() const;
 
@@ -45,7 +46,8 @@ signals:
     void contactsChanged();
 
 private:
-    QMap<QString, QStringList> mContacts;
+    QList<QVector<QString>> mContacts;
+
 };
 
 #endif // CONTACTSMODEL_H
