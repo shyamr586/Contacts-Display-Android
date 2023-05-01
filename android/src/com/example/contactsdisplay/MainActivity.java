@@ -45,7 +45,7 @@ public class MainActivity extends QtActivity {
     public long lastSyncTime = 0;
 
 
-    public native void setQStringList(long pointer, String contacts, boolean inital);
+    public native void setQStringList(long pointer, String contacts, boolean initial);
     public native void addToModel(long pointer, String contacts);
     public native void removeFromModel(long pointer, String contactId);
 
@@ -165,19 +165,18 @@ public class MainActivity extends QtActivity {
                 public String tag = "From the AsyncTask class";
                 JSONArray jsonArrContacts = new JSONArray();
                 boolean deleteEvent = false;
-                int sortId = 0;
                 @SuppressLint("Range")
                 @Override
                 protected Void doInBackground(Boolean... params) {
                     boolean initial = params[0];
                     long tStart = System.currentTimeMillis();
-                    ArrayList<String> contacts = new ArrayList<>();
 
                     if (contactsObserver == null) {
                         contactsObserver = new ContactsObserver(handler);
                         getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, contactsObserver);
                     }
                     ContentResolver contentResolver = getContentResolver();
+
                     String selection = ContactsContract.Contacts.CONTACT_LAST_UPDATED_TIMESTAMP + " > ?";
                     String[] selectionArgs = new String[] {String.valueOf(lastSyncTime)};
                     Cursor cursor1 = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, selection, selectionArgs, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
@@ -193,8 +192,6 @@ public class MainActivity extends QtActivity {
                                 if (phoneCursor != null) {
                                     while (phoneCursor.moveToNext()) {
                                         String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                                        contacts.add(name + ": " + phoneNumber);
-                                        String[] contactDetails = new String[] {name, phoneNumber, String.valueOf(sortId++)};
                                         JSONObject jsonContactObj = new JSONObject();
 
                                         try {
@@ -235,7 +232,6 @@ public class MainActivity extends QtActivity {
                     }
                     deleteEvent = false;
 
-                    Log.d(tag, "SIZE OF THE CONTACTS ARRAYLIST IS " + contacts.size() + "");
                     return null;
                 }
             };

@@ -51,7 +51,6 @@ Java_com_example_contactsdisplay_MainActivity_setQStringList(JNIEnv *env, jobjec
 extern "C" {
 JNIEXPORT void JNICALL
 Java_com_example_contactsdisplay_MainActivity_removeFromModel(JNIEnv *env, jobject, jlong ptr, jstring jContactId) {
-
     const char *cContactId = env->GetStringUTFChars(jContactId, NULL);
     QString contactId = QString::fromUtf8(cContactId);
     env->ReleaseStringUTFChars(jContactId, cContactId);
@@ -81,18 +80,16 @@ void ContactsModel::addNewContact(QList<QVector<QString>> newContacts)
     for (const QVector<QString> &newContact : newContacts)
     {
         bool found = false;
-
         for (int i = 0; i < contacts.size(); ++i)
         {
             QVector<QString> &existingContact = contacts[i];
-
             if (existingContact[0] == newContact[0]) // [0] is the 'id' field
             {
                 found = true;
-
                 // Update the data in the existing contact
                 contacts[i] = QVector<QString>({newContact[0], newContact[1], newContact[2]});
                 std::sort(contacts.begin(), contacts.end(), compareContacts);
+
                 emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
                 break; // No need to search further since we've found a match
             }
@@ -101,7 +98,6 @@ void ContactsModel::addNewContact(QList<QVector<QString>> newContacts)
         if (!found) // If the id does not exist, add the new contact
         {
             int insertPosition = 0;
-
             // Find the correct insert position based on the 'name' field
             while (insertPosition < contacts.size() && contacts[insertPosition][1] < newContact[1]) {
                 ++insertPosition;
